@@ -17,7 +17,7 @@ app.use(limiter);
 // how to check valid authentication before hiting the booking(any other) service.
 app.use('/bookingservice', async (req, res, next) =>{
     try {
-        const authRequestURL = `${Auth_SERVICE_URL}/authservice/api/v1/isauthenticated`;
+        const authRequestURL = `http://localhost:3001/api/v1/isauthenticated`;
         const response = await axios.get(authRequestURL, {
             headers:{
                 'x-access-token' : req.headers['x-access-token']
